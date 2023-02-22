@@ -1,0 +1,78 @@
+#error_explanation {
+  color: red;
+  text-align: center;
+  display: contents;
+}
+
+label:before {
+  content: "必須";
+  color: white;
+  font-size: 12px;
+  background-color: rgba(255, 0, 0, 0.941);
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 8px;
+  }
+
+.signup-body, .login-body {
+  border-bottom: inset;
+  margin-bottom: 20px;
+}
+
+.form-btn  {
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn-signup, .btn-login{
+  background-color: #347dec;
+  color: white;
+}
+
+.signup, .login {
+  height: calc(100vh - 110px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form, .login-form {
+  width: 60%;
+  border: 1px solid #514242f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+.login h2, .signup h2 {
+  border-bottom: inset;
+  text-align: center;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.field {
+  padding: 15px 15px;
+  width: 100%;
+}
+
+.form-item {
+  padding: 0 15px;
+}
+
+.signup-footer, .login-footer {
+  padding-left: 10px;
+}
+
+.signup-body input, .login-body input {
+  width: 100%;
+}
+
+/* ========== devise-links ========== */
+.devise-links {
+  display: inline-block;
+  padding-bottom: 6px;
+}
+/* ========== devise_links ========== */

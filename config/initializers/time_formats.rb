@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:datetime] = '%y年 %m月 %d日'

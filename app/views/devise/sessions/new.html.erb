@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="container">
+    <div class="login">
+      <div class="login-form">
+        <div class="login-header">
+          <h2>ログイン</h2>
+        </div>
+        <div class="login-body container-fluid">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field row">
+              <div class="col-md-6 form-item"><%= f.label :email %></div>
+              <div class="col-md-6 form-item"><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力してください" %></div>
+            </div>
+
+            <div class="field row">
+              <div class="col-md-6 form-item"><%= f.label :password %></div>
+              <div class="col-md-6 form-item"><%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワードを入力してください" %></div>
+            </div>
+
+            <div class="row">
+              <div class="form-btn"><%= f.submit "ログインする", class: "btn-login btn btn-primary" %></div>
+            </div>
+          <% end %>
+        </div>
+        <div class="login-footer">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

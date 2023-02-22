@@ -45,15 +45,40 @@ header {
 .header-list {
   display: flex;
   justify-content: end;
+  align-items: center;
+  height: 110px;
 }
 
 .header-list li {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
+  cursor: pointer;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  color: red;
+  height: 100%;
+  letter-spacing: 0.06em;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.header-list a {
-  display: block;
+.header-list li::before {
+  background: #0d63e4;
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  margin: auto;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
+}
+
+.header-list li:hover::before {
+  transform-origin: center top;
+  transform: scale(1, 1);
 }
 
 header .container {
