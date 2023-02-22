@@ -1,0 +1,53 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@charset "utf-8";
+
+.main {
+  padding-top: 110px;
+}
+
+.top {
+  height: calc(100vh - 110px);
+  background-image: url(https://laundrybox.jp/assets/media/2020/09/%E7%84%A1%E9%A1%8C11_20200909142454.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.top-view-text {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 0 80px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 1px 1px 10px #4b2c14;
+}
+
+.top-view-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 56px;
+  line-height: 72px;
+}
+
+.top-view-text p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* =====about-contents start===== */
+.about-contents {
+  height: 500px;
+  background-color: green;
+}
+/* =====about-contents end===== */
+
+/* =====contacts start===== */
+.contacts {
+  height: 500px;
+  background-color: yellow;
+}
+/* =====contacts end===== */

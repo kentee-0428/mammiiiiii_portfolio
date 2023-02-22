@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/* =====common start===== */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/* =====common start===== */
+
+/* =====header start===== */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+.header-logo span {
+  color: red;
+  font-size: 50px;
+}
+
+.header-logo h1 {
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  color: #0d63e4;
+}
+
+.header-logo p {
+  font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  color: #0d63e4;
+  position: absolute;
+  top: 8px;
+  left: 70px;
+}
+
+.header-logo {
+  position: relative;
+}
+
+.header-list {
+  display: flex;
+  justify-content: end;
+}
+
+.header-list li {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+}
+
+.header-list a {
+  display: block;
+}
+
+header .container {
+  height: 110px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-menu-button {
+  display: none;
+}
+
+.header-list li {
+  margin: 0 15px;
+  letter-spacing: 1.2px;
+  font-size: 20px;
+}
+
+.header-btn {
+  background-color: hsl(59, 88%, 55%);
+  font-weight: bold;
+}
+/* =====header end===== */
+
+
+/* =====footer start===== */
+footer {
+  background-color: #0d63e4;
+}
+
+.footer-logo span {
+  color: red;
+  font-size: 100px;
+}
+
+.footer-logo h1 {
+  font-size: 80px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+.footer-logo p {
+  font-size: 28px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: 21px;
+  left: 140px;
+}
+
+.footer-logo {
+  position: relative;
+}
+
+footer .container {
+  padding: 0 40px;
+  /* text-align: center; */
+  padding-top: 50px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #ffffff;
+  padding-top: 40px;
+}
+
+/* =====footer end===== */
