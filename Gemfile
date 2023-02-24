@@ -30,6 +30,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
