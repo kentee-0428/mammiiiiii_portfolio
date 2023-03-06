@@ -15,6 +15,13 @@
  */
   @charset "utf-8";
 
+  $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+  @import '@fortawesome/fontawesome-free/scss/fontawesome';
+  @import '@fortawesome/fontawesome-free/scss/solid';
+  @import '@fortawesome/fontawesome-free/scss/regular';
+  @import '@fortawesome/fontawesome-free/scss/brands';
+  @import '@fortawesome/fontawesome-free/scss/v4-shims';
+
  * {
   outline: 0;
   margin: 0;
@@ -50,6 +57,14 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.user-icon img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+  border:3px solid #347dec;
 }
 
 .btn {

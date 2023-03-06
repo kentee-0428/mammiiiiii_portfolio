@@ -11,7 +11,22 @@
         <ul class="header-list">
           <% if user_signed_in? %>
             <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to '#ユーザー名', "#" %></li>
+            <li>
+              <% if current_user.name? %>
+                <%= link_to current_user.name, user_path(id: current_user) %>
+              <% else %>
+                <%= link_to "ゲスト", user_path(id: current_user) %>
+              <% end %>
+            </li>
+            <% if current_user.image? %>
+              <div class="user-icon">
+                <%= image_tag current_user.image.url %>
+              </div>
+            <% else %>
+              <div class="user-icon">
+                <%= image_tag "default.png" %>
+              </div>
+            <% end %>
           <% else %>
             <li><%= link_to "signup", new_user_registration_path %></li>
             <li><%= link_to "login", new_user_session_path %></li>

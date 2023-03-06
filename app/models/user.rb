@@ -11,4 +11,11 @@ class User < ApplicationRecord
       # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
     end
   end
+
+  # イメージカラムを指定
+  mount_uploader :image, ImageUploader
+
+  validates :name, presence: true, uniqueness: true, length: { maximum: 10 }, on: :update
+  validates :gender, presence: true, on: :update
+  validates :introduction, length: { maximum: 150 }
 end

@@ -6,8 +6,9 @@ ja:
       user:
         name: 名前
         email: メールアドレス
-        # image_name: 画像
-        introduction: 一言紹介
+        image: 画像
+        introduction: 紹介
+        gender: 性別
         encrypted_password: パスワード
 
   errors:

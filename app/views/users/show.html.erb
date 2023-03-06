@@ -1,0 +1,61 @@
+<div class="container">
+  <!-- USER_INFORMATION SECTION -->
+  <div class="user-info">
+    <div class="user-form">
+      <div class="user-top">
+        <div class="user-icon">
+          <% if current_user.image? %>
+            <%= image_tag current_user.image.url %>
+          <% else %>
+            <%= image_tag "default.png", class: "guest-user" %>
+          <% end %>
+        </div>
+        <% if current_user.name? %>
+          <div class="user-name">
+            <h2><%= current_user.name %></h2>
+          </div>
+        <% else %>
+          <div class="user-name">
+            <h2>ゲスト</h2>
+          </div>
+        <% end %>
+        <div class="user-gender">
+          <% case current_user.gender %>
+            <% when "0" %>
+              <span class="fa-solid fa-person man"></span>
+            <% when "1" %>
+            <span class="fa-solid fa-person-dress woman"></span>
+          <% end %>
+        </div>
+      </div>
+      <div class="user-down">
+        <% if current_user.introduction? %>
+          <div class="user-introduction">
+            <%= current_user.introduction %>
+          </div>
+        <% else %>
+          <div class="user-introduction-exmple">
+            <p>例) 初めまして、20代後半で2児のパパです。<br>
+            子育てに悩むことも多くいろんな方のご意見などを参考にしたいと思っております。<br>
+            現在は、上の子がもう少しで小学校に入学するので子供の教育について興味があります。<br>
+            よろしくお願いします。</p>
+          </div>
+        <% end %>
+      </div>
+      <% if current_user.name? %>
+        <div class="user-links">
+          <%= link_to "プロフィール編集", edit_user_path, class: "user-edit" %>
+          <%= link_to "アカウント編集", edit_user_registration_path, class: "user-edit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- USERS_INFORMATION SECTION -->
+
+  <!-- USERS_POSTS SECTION -->
+  <h1>POST</h1>
+  <div class="user-posts">
+    <div class="user-post"></div>
+  </div>
+  <!-- USERS_POSTS SECTION -->
+</div>

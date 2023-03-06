@@ -10,19 +10,24 @@
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="field row">
+              <div class="col-md-6 form-item"><%= f.label :name %></div>
+              <div class="col-md-6 form-item"><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名を入力してください" %></div>
+            </div>
+
+            <div class="field row">
               <div class="col-md-6 form-item"><%= f.label :email %></div>
-              <div class="col-md-6 form-item"><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力してください" %></div>
+              <div class="col-md-6 form-item"><%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレスを入力してください" %></div>
             </div>
 
             <div class="field row">
               <div class="col-md-6 form-item"><%= f.label :password %> (6字以上)</div>
-              <div class="col-md-6 form-item"><%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "パスワードを入力してください" %></div>
+              <div class="col-md-6 form-item"><%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力してください" %></div>
             </div>
 
 
             <div class="field row">
               <div class="col-md-6 form-item"><%= f.label :password_confirmation %></div>
-              <div class="col-md-6 form-item"><%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", placeholder: "確認用パスワードを入力してください" %></div>
+              <div class="col-md-6 form-item"><%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワードを入力してください" %></div>
             </div>
 
             <div class="row">

@@ -1,0 +1,53 @@
+<!-- USER_PROFILE_EDIT SECTION -->
+<div class="container">
+  <div class="signup">
+    <div class="signup-form">
+      <div class="signup-header">
+        <h1>プロフィールを編集する</h1>
+      </div>
+      <div class="signup-body container-fluid">
+        <%= form_with model: @user, local: true do |f| %>
+          <%= render "devise/shared/error_messages", resource: @user %>
+
+          <div class="user-icon-item">
+            <% if current_user.image? %>
+              <div class="user-icon">
+                <%= image_tag current_user.image.url %>
+              </div>
+            <% else %>
+              <div class="user-icon">
+                <%= image_tag "default.png" %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-6 form-item"><%= f.label :image %></div>
+            <div class="col-md-6 form-item"><%= f.file_field :image, autocomplete: "image", class: "hidden" %></div>
+          </div>
+
+
+          <div class="field row">
+            <div class="col-md-6 form-item"><%= f.label :name %></div>
+            <div class="col-md-6 form-item"><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名を入力してください" %></div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-6 form-item"><%= f.label :gender, '性別' %></div>
+            <div class="col-md-6 form-item"><%= f.select :gender, { "男性": 0, "女性": 1 }, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %></div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-6 form-item"><%= f.label :introduction %></div>
+            <div class="col-md-6 form-item"><%= f.text_area :introduction, autocomplete: "introduction", placeholder: "初めまして、マミーです。よろしくお願いします" %></div>
+          </div>
+
+          <div class="row">
+            <div class="form-btn"><%= f.submit "更新する", class: "btn-signup btn btn-primary" %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- USER_PROFILE_EDIT SECTION -->
