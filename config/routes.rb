@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     passwords: 'users/passwords',
@@ -22,6 +21,14 @@ Rails.application.routes.draw do
       get :profile
     end
   end
+
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
+    # collection do
+    #   get :search
+    # end
+end
 
   root to: 'home#top'
 end

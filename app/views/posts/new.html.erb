@@ -1,0 +1,27 @@
+
+  <div class="container">
+    <div class="signup">
+      <div class="signup-form">
+        <div class="signup-header">
+          <h2>NEW POST</h2>
+        </div>
+        <div class="signup-body container-fluid">
+          <%= form_with model: @post, local: true do |f| %>
+
+            <div class="field row">
+              <div class="col-md-6 form-item"><%= f.label :content %></div>
+              <div class="col-md-6 form-item"><%= f.text_area :content, autofocus: true, autocomplete: "content", placeholder: "ユーザー名を入力してください" %></div>
+            </div>
+
+            <%= f.hidden_field :user_id, value: current_user.id %>
+
+            <div class="row">
+              <div class="form-btn"><%= f.submit "投稿する", class: "btn-signup btn btn-primary" %></div>
+            </div>
+          <% end %>
+        </div>
+        <div class="signup-footer">
+        </div>
+      </div>
+    </div>
+  </div>

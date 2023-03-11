@@ -54,8 +54,41 @@
 
   <!-- USERS_POSTS SECTION -->
   <h1>POST</h1>
-  <div class="user-posts">
-    <div class="user-post"></div>
-  </div>
+    <div class="post-content container-fluid">
+      <% @posts.each do | post | %>
+      <div class="post-user-content row">
+        <div class="post-content-side col-md-2">
+          <% if @user.image? %>
+            <div class="user-icon">
+              <%= image_tag @user.image.url %>
+            </div>
+          <% else %>
+            <div class="user-icon">
+              <%= image_tag "default.png" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="post-content-main col-md-10">
+          <div class="post-content-main-top">
+            <p class="post-user-name"><%= @user.name %></p>
+            <p class="post-user-create-time"><%= post.created_at.to_s(:datetime_jp) %></p>
+          </div>
+          <div class="post-content-main-message">
+            <%= post.content %>
+          </div>
+          <% if post %>
+          <div class="post-down">
+            <%= link_to edit_post_path do %>
+              <i class="fa-regular fa-pen-to-square"></i>
+            <% end %>
+            <%= link_to post_path(current_user.id), method: :delete do %>
+              <i class="fa-regular fa-trash-can"></i>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   <!-- USERS_POSTS SECTION -->
 </div>

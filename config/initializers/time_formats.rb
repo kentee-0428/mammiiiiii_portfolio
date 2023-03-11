@@ -1,1 +1,1 @@
-Time::DATE_FORMATS[:datetime] = '%y年 %m月 %d日'
+Time::DATE_FORMATS[:datetime_jp] =  "%Y/%m/%d %H:%M"

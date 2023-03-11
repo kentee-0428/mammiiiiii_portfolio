@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="section-title">
+    <h1>POSTS</h1>
+  </div>
+  <div class="post-contents">
+    <div class="post-search-form">
+      <%= search_form_for @q, url: posts_path do |f| %>
+        <div class="search-form-area">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <%= f.search_field :content_cont, class: "form-contro", placeholder: "検索ワード" %>
+        </div>
+        <div class="search-form-btn">
+          <%= f.submit '検索', class: "btn btn-primary search-btn" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="result_posts_count">
+      <p>投稿数: <%= @result_posts.count %></p>
+    </div>
+    <div class="result_posts_text">
+      <% if @result_posts.count == 0 %>
+        <p>検索結果が見つかりません</p>
+      <% end %>
+    </div>
+    <% @result_posts.each do | post | %>
+      <%= link_to post_path(post.id) do %>
+        <div class="post-user-content scale row">
+          <div class="post-content-side col-md-2">
+            <% if post.user.image? %>
+              <div class="user-icon">
+                <%= image_tag post.user.image.url %>
+              </div>
+            <% else %>
+              <div class="user-icon">
+                <%= image_tag "default.png" %>
+              </div>
+            <% end %>
+            </div>
+            <div class="post-content-main col-md-10">
+              <div class="post-content-main-top">
+                <p class="post-user-name"><%= post.user.name %></p>
+                <p class="post-user-create-time">作成日: <%= post.created_at.to_s(:datetime_jp) %></p>
+              </div>
+            <div class="post-content-main-message">
+              <%= post.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
