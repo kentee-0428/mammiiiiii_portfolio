@@ -15,6 +15,11 @@ class User < ApplicationRecord
   # イメージカラムを指定
   mount_uploader :image, ImageUploader
 
+  #アソシエーション設定
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
   validates :name, presence: true, uniqueness: true, length: { maximum: 10 }, on: :update
   validates :gender, presence: true, on: :update
   validates :introduction, length: { maximum: 150 }

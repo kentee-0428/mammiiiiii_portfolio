@@ -1,0 +1,126 @@
+<div class="container container-fluid">
+  <div class="section-title">
+    <h1>POST</h1>
+  </div>
+  <div class="post-content">
+    <ul class="post-search-form-links">
+      <li><%= link_to "投稿一覧表", posts_path %></li>
+      <li><%= link_to "戻る", :back %></li>
+    </ul>
+    <!-- POST_USER SECTION -->
+    <div class="post-user-content row">
+      <div class="post-content-side col-md-2">
+        <% if @post.user.image? %>
+          <div class="user-icon">
+            <%= image_tag @post.user.image.url %>
+          </div>
+        <% else %>
+          <div class="user-icon">
+            <%= image_tag "default.png" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="post-content-main col-md-10">
+        <div class="post-content-main-top">
+          <p class="post-user-name"><%= @post.user.name %></p>
+          <p class="post-user-create-time">作成日: <%= @post.created_at.to_s(:datetime_jp) %></p>
+        </div>
+        <div class="post-content-main-message">
+          <%= @post.content %>
+        </div>
+        <% if @post.id === current_user.id %>
+          <ul class="post-down">
+            <li>
+              <% if Like.find_by(user_id: current_user.id, post_id: @post.id)%>
+                <%= link_to post_likes_path(@post), method: :delete do %>
+                  <span class="fa fa-heart liked-btn"></span>
+                <% end %>
+              <% else %>
+                <%= link_to post_likes_path(@post), method: :post do %>
+                  <span class="fa-regular fa-heart"></span>
+                <% end %>
+              <% end %>
+              <%= @post.likes.count %>
+            </li>
+            <li>
+              <i class="fa-regular fa-comments"></i>
+              <%= @comments.count %>
+            </li>
+            <li>
+              <%= link_to edit_post_path do %>
+                <i class="fa-regular fa-pen-to-square"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to post_path(current_user.id), method: :delete do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="post-down">
+            <li>
+              <% if Like.find_by(user_id: current_user.id, post_id: @post.id)%>
+                <%= link_to post_likes_path(@post), method: :delete do %>
+                  <span class="fa fa-heart liked-btn"></span>
+                <% end %>
+              <% else %>
+                <%= link_to post_likes_path(@post), method: :post do %>
+                  <span class="fa-regular fa-heart"></span>
+                <% end %>
+              <% end %>
+              <%= @post.likes.count %>
+            </li>
+            <li>
+              <i class="fa-regular fa-comments"></i>
+              <%= @comments.count %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <!-- POST_USER SECTION -->
+
+    <!-- COMMENT SECTION -->
+    <div class="comment">
+      <%= form_with model:[@post, @comment], method: :post, local: true do |f| %>
+        <div class="comment-text">
+          <%= f.text_area :content, placeholder: "上記の投稿に対してコメントする..." %>
+        </div>
+        <div class="comment-text-btn">
+          <%= f.submit "コメントする", class: "btn btn-primary" %>
+        </div>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+      <% end %>
+    </div>
+    <!-- COMMENT SECTION -->
+
+    <!-- COMMENT_INDEX SECTION -->
+      <% @comments.each do |comment| %>
+        <div class="comment-index row">
+          <div class="comment-side col-md-2">
+            <% if comment.user.image? %>
+              <div class="user-icon">
+                <%= image_tag comment.user.image.url %>
+              </div>
+            <% else %>
+              <div class="user-icon">
+                <%= image_tag "default.png" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="comment-main col-md-10">
+            <div class="comment-main-top">
+              <p class="comment-user"><%= comment.user.name %></p>
+              <p>作成日: <%= comment.created_at.to_s(:datetime_jp) %></p>
+            </div>
+            <div class="comment-main-message">
+              <%= comment.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <!-- COMMENT_INDEX SECTION -->
+  </div>
+</div>

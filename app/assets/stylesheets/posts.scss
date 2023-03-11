@@ -1,0 +1,159 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.section-title {
+  text-align: center;
+  padding: 50px 0 20px;
+}
+
+.post-contents {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  border: 0.1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 80px;
+  padding: 30px 100px;
+}
+
+.post-content {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  border: 0.1px solid rgba(0, 0, 0, 0.12);
+}
+
+.post-user-content {
+  border-bottom: inset;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  border: 0.1px solid rgba(0, 0, 0, 0.12);
+  padding: 20px 20px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+}
+.scale:hover {
+  transform: scale(1.05);
+}
+
+.post-content-main > .post-down{
+  display: flex;
+  justify-content: end;
+}
+
+.post-content-main-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.post-content-main-message {
+  display: flex;
+  justify-content: start;
+  margin: 5px 0;
+}
+
+.post-user-name {
+  font-size: 30px;
+}
+
+.fa-trash-can {
+  color: red;
+}
+
+.post-down li {
+  margin-right: 20px;
+}
+
+.post-down {
+  margin: 20px 0;
+}
+
+.liked-btn {
+  color: rgba(236, 34, 111, 0.963);
+}
+
+.comment-index {
+  border-bottom: inset;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  border: 0.1px solid rgba(0, 0, 0, 0.12);
+  margin: 5px 50px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.post-search-form {
+  border-bottom: inset;
+}
+
+.search-form-area {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  margin: 0 40px 10px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form-btn {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.fa-magnifying-glass {
+  width: 5%;
+  color: #757575;
+}
+
+.form-contro {
+  border: none;
+  padding: 0 5px;
+  width: 95%;
+}
+
+.post-search-form-links {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
+}
+
+.post-search-form-links li {
+  padding: 0 10px;
+}
+
+.comment {
+  margin: 0 50px;
+}
+
+.comment-text textarea {
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 8px;
+}
+
+.comment-text-btn {
+  margin-bottom: 30px;
+}
+
+.comment-main-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.comment-main-message {
+  display: flex;
+  justify-content: start;
+  margin: 5px 0;
+}
+
+.comment-main-top .comment-user {
+  font-size: 23px;
+}
+
+.result_posts_count {
+  display: flex;
+  justify-content: end;
+  margin: 10px;
+}
+
+.result_posts_text {
+  text-align: center;
+}
